@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gm.hosptial.mapper.numberinfoMapper">
+  <resultMap id="BaseResultMap" type="com.gm.hosptial.pojo.numberinfo">
+    <result column="DoctorID" jdbcType="VARCHAR" property="doctorid" />
+    <result column="Number" jdbcType="VARCHAR" property="number" />
+    <result column="Sumnumber" jdbcType="INTEGER" property="sumnumber" />
+  </resultMap>
+  <insert id="insert" parameterType="com.gm.hosptial.pojo.numberinfo">
+    insert into numberinfo (DoctorID, Number, Sumnumber
+      )
+    values (#{doctorid,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR}, #{sumnumber,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.gm.hosptial.pojo.numberinfo">
+    insert into numberinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="doctorid != null">
+        DoctorID,
+      </if>
+      <if test="number != null">
+        Number,
+      </if>
+      <if test="sumnumber != null">
+        Sumnumber,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="doctorid != null">
+        #{doctorid,jdbcType=VARCHAR},
+      </if>
+      <if test="number != null">
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="sumnumber != null">
+        #{sumnumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
