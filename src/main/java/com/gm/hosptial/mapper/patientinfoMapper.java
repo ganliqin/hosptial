@@ -1,7 +1,7 @@
 package com.gm.hosptial.mapper;
 
 import com.gm.hosptial.pojo.patientinfo;
-
+//表名：PatientInfo说明：患者信息
 public interface patientinfoMapper {
     int deleteByPrimaryKey(String patientid);
 

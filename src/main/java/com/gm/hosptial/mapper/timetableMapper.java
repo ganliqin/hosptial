@@ -1,7 +1,7 @@
 package com.gm.hosptial.mapper;
 
 import com.gm.hosptial.pojo.timetable;
-
+//表名：timetable，说明：时间表
 public interface timetableMapper {
     int deleteByPrimaryKey(Integer tid);
 

@@ -52,7 +52,8 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd
             <value>com.gm.ssm.pojo</value>
         </property>
     </bean>
-
+    <!--<bean id=""></bean>-->
+    <!--<bean id="PokemonImpl" class="com.gm.pokemon.Impl.PokemonServiceImpl"></bean>-->
     <!-- 自动扫描所有的Mapper接口与文件 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.linhs.ssm.mapper"/>

@@ -4,5 +4,48 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+    <properties resource="jdbc.properties">   <!-- //引入外部属性文件，仅能引入一个文件 -->
+        <!--<property name="jdbc.password" value="root"/> &lt;!&ndash; 定义mybatis的全局变量 &ndash;&gt; -->
+    </properties>
 
+    <typeAliases>
+        <typeAlias type="com.gm.hosptial.pojo.appointinfo" alias="appointinfo"></typeAlias>
+        <typeAlias type="com.gm.hosptial.pojo.appointrecord" alias="appointrecord"></typeAlias>
+        <typeAlias type="com.gm.hosptial.pojo.departmentinfo" alias="departmentinfo"></typeAlias>
+        <typeAlias type="com.gm.hosptial.pojo.docleaveinfo" alias="docleaveinfo"></typeAlias>
+        <typeAlias type="com.gm.hosptial.pojo.doctorinfo" alias="doctorinfo"></typeAlias>
+        <typeAlias type="com.gm.hosptial.pojo.idinfo" alias="idinfo"></typeAlias>
+        <typeAlias type="com.gm.hosptial.pojo.numberinfo" alias="numberinfo"></typeAlias>
+        <typeAlias type="com.gm.hosptial.pojo.patientinfo" alias="patientinfo"></typeAlias>
+        <typeAlias type="com.gm.hosptial.pojo.scheduleinfo" alias="scheduleinfo"></typeAlias>
+        <typeAlias type="com.gm.hosptial.pojo.timetable" alias="timetable"></typeAlias>
+        <typeAlias type="com.gm.hosptial.pojo.visitrecord" alias="visitrecord"></typeAlias>
+
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="${c3p0.driverClass}" /> <!-- 使用外部属性文件定义的变量 -->
+                <property name="url" value="${c3p0.url}" />
+                <property name="username" value="${c3p0.user}" />
+                <property name="password" value="${c3p0.password}" />  <!-- 使用property定义的变量 -->
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper  resource="mapper/appointinfoMapper.xml"></mapper>
+        <mapper  resource="mapper/appointrecordMapper.xml"></mapper>
+        <mapper  resource="mapper/departmentinfoMapper.xml"></mapper>
+        <mapper  resource="mapper/doctorinfoMapper.xml"></mapper>
+        <mapper  resource="mapper/appointrecordMapper.xml"></mapper>
+        <mapper  resource="mapper/idinfoMapper.xml"></mapper>
+        <mapper  resource="mapper/numberinfoMapper.xml"></mapper>
+        <mapper  resource="mapper/patientinfoMapper.xml"></mapper>
+        <mapper  resource="mapper/scheduleinfoMapper.xml"></mapper>
+        <mapper  resource="mapper/timetableMapper.xml"></mapper>
+        <mapper  resource="mapper/visitrecordMapper.xml"></mapper>
+    </mappers>
 </configuration>

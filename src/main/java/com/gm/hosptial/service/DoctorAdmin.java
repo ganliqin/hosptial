@@ -1,0 +1,28 @@
+package com.gm.hosptial.service;
+
+import com.gm.hosptial.pojo.*;
+
+import java.util.List;
+
+public interface DoctorAdmin {
+    //管理员增加医生
+    public boolean addDoctor(doctorinfo dinfo);
+    //管理员删除医生
+    public boolean deleteDoctor(String did);
+    //管理员修改医生
+    public boolean upDoctor(String did);
+    //获取排班表
+    public List<scheduleinfo> getScheduleinfo();
+    //管理员安排医生排班
+    public boolean setDepartment(doctorinfo dinfo,scheduleinfo sinfo);
+    //管理员查看患者信息
+    public List<patientinfo> getPatientinfo();
+    //管理员查看医生信息
+    public List<doctorinfo> getDoctorinfo();
+    //管理员解冻/冻结用户
+    public boolean setPatientinfotime(patientinfo pinfo,String time);
+    //管理员查看未审批假条
+    public List<docleaveinfo> getDocleaveinfo();
+    //管理员审批假条
+    public boolean setDocleaveinfo();
+}
