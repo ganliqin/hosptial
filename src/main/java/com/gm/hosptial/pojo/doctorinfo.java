@@ -3,8 +3,6 @@ package com.gm.hosptial.pojo;
 public class doctorinfo {
     private String doctorid;
 
-    private Integer tid;
-
     private String doctorname;
 
     private String doctorphone;
@@ -25,14 +23,6 @@ public class doctorinfo {
 
     public void setDoctorid(String doctorid) {
         this.doctorid = doctorid == null ? null : doctorid.trim();
-    }
-
-    public Integer getTid() {
-        return tid;
-    }
-
-    public void setTid(Integer tid) {
-        this.tid = tid;
     }
 
     public String getDoctorname() {

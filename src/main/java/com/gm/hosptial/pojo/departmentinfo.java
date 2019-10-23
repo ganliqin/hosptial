@@ -3,8 +3,6 @@ package com.gm.hosptial.pojo;
 public class departmentinfo {
     private String departmentid;
 
-    private Integer tid;
-
     private String departmentname;
 
     private String departmentintroduction;
@@ -15,14 +13,6 @@ public class departmentinfo {
 
     public void setDepartmentid(String departmentid) {
         this.departmentid = departmentid == null ? null : departmentid.trim();
-    }
-
-    public Integer getTid() {
-        return tid;
-    }
-
-    public void setTid(Integer tid) {
-        this.tid = tid;
     }
 
     public String getDepartmentname() {

@@ -1,6 +1,9 @@
 package com.gm.hosptial.mapper;
 
 import com.gm.hosptial.pojo.idinfo;
+
+import java.util.List;
+
 //表名：IDInfo，说明：身份证信息
 public interface idinfoMapper {
     int deleteByPrimaryKey(String id);
@@ -10,6 +13,8 @@ public interface idinfoMapper {
     int insertSelective(idinfo record);
 
     idinfo selectByPrimaryKey(String id);
+
+    List<idinfo> select();
 
     int updateByPrimaryKeySelective(idinfo record);
 

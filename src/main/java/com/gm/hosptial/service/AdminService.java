@@ -4,9 +4,9 @@ import com.gm.hosptial.pojo.*;
 
 import java.util.List;
 
-public interface DoctorAdmin {
+public interface AdminService {
     //管理员增加医生
-    public boolean addDoctor(doctorinfo dinfo);
+    public boolean addDoctor(doctorinfo dinfo,String id);
     //管理员删除医生
     public boolean deleteDoctor(String did);
     //管理员修改医生

@@ -13,7 +13,7 @@
     <result column="DocPassword" jdbcType="VARCHAR" property="docpassword" />
   </resultMap>
   <sql id="Base_Column_List">
-    DoctorID, tid, DoctorName, DoctorPhone, DoctorDeptID, DoctorStatus, DoctorSpecialty, 
+    DoctorID, DoctorName, DoctorPhone, DoctorDeptID, DoctorStatus, DoctorSpecialty,
     DoctorJobTitle, DocPassword
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -31,7 +31,7 @@
       DoctorPhone, DoctorDeptID, DoctorStatus, 
       DoctorSpecialty, DoctorJobTitle, DocPassword
       )
-    values (#{doctorid,jdbcType=VARCHAR}, #{tid,jdbcType=INTEGER}, #{doctorname,jdbcType=VARCHAR}, 
+    values (#{doctorid,jdbcType=VARCHAR}, #{doctorname,jdbcType=VARCHAR},
       #{doctorphone,jdbcType=VARCHAR}, #{doctordeptid,jdbcType=VARCHAR}, #{doctorstatus,jdbcType=INTEGER}, 
       #{doctorspecialty,jdbcType=VARCHAR}, #{doctorjobtitle,jdbcType=VARCHAR}, #{docpassword,jdbcType=VARCHAR}
       )
@@ -41,9 +41,6 @@
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="doctorid != null">
         DoctorID,
-      </if>
-      <if test="tid != null">
-        tid,
       </if>
       <if test="doctorname != null">
         DoctorName,
@@ -100,9 +97,6 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.gm.hosptial.pojo.doctorinfo">
     update doctorinfo
     <set>
-      <if test="tid != null">
-        tid = #{tid,jdbcType=INTEGER},
-      </if>
       <if test="doctorname != null">
         DoctorName = #{doctorname,jdbcType=VARCHAR},
       </if>
@@ -129,7 +123,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.gm.hosptial.pojo.doctorinfo">
     update doctorinfo
-    set tid = #{tid,jdbcType=INTEGER},
+    set
       DoctorName = #{doctorname,jdbcType=VARCHAR},
       DoctorPhone = #{doctorphone,jdbcType=VARCHAR},
       DoctorDeptID = #{doctordeptid,jdbcType=VARCHAR},

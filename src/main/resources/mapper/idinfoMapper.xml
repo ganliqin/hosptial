@@ -8,22 +8,27 @@
     <result column="Address" jdbcType="VARCHAR" property="address" />
   </resultMap>
   <sql id="Base_Column_List">
-    ID, tid, Name, Address
+    ID,  Name, Address
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from idinfo
     where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="select" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from idinfo
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from idinfo
     where ID = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.gm.hosptial.pojo.idinfo">
-    insert into idinfo (ID, tid, Name, 
+    insert into idinfo (ID, Name,
       Address)
-    values (#{id,jdbcType=VARCHAR}, #{tid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
       #{address,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.gm.hosptial.pojo.idinfo">
@@ -31,9 +36,6 @@
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         ID,
-      </if>
-      <if test="tid != null">
-        tid,
       </if>
       <if test="name != null">
         Name,

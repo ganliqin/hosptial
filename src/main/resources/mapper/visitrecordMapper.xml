@@ -7,6 +7,15 @@
     <result column="VisitStatus" jdbcType="INTEGER" property="visitstatus" />
     <result column="Recipe" jdbcType="VARCHAR" property="recipe" />
   </resultMap>
+    <sql id="Base_Column_List">
+    PatientID, DoctorID, VisitStatus, Recipe
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from visitrecord
+    where patientid = #{patientid,jdbcType=VARCHAR} and doctorid = #{doctorid,jdbcType=VARCHAR}
+  </select>
   <insert id="insert" parameterType="com.gm.hosptial.pojo.visitrecord">
     insert into visitrecord (PatientID, DoctorID, VisitStatus, 
       Recipe)

@@ -3,8 +3,6 @@ package com.gm.hosptial.pojo;
 public class idinfo {
     private String id;
 
-    private Integer tid;
-
     private String name;
 
     private String address;
@@ -17,13 +15,6 @@ public class idinfo {
         this.id = id == null ? null : id.trim();
     }
 
-    public Integer getTid() {
-        return tid;
-    }
-
-    public void setTid(Integer tid) {
-        this.tid = tid;
-    }
 
     public String getName() {
         return name;

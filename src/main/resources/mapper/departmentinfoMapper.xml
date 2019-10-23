@@ -8,7 +8,7 @@
     <result column="Departmentintroduction" jdbcType="VARCHAR" property="departmentintroduction" />
   </resultMap>
   <sql id="Base_Column_List">
-    DepartmentID, tid, DepartmentName, Departmentintroduction
+    DepartmentID, DepartmentName, Departmentintroduction
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -23,7 +23,7 @@
   <insert id="insert" parameterType="com.gm.hosptial.pojo.departmentinfo">
     insert into departmentinfo (DepartmentID, tid, DepartmentName, 
       Departmentintroduction)
-    values (#{departmentid,jdbcType=VARCHAR}, #{tid,jdbcType=INTEGER}, #{departmentname,jdbcType=VARCHAR}, 
+    values (#{departmentid,jdbcType=VARCHAR}, #{departmentname,jdbcType=VARCHAR},
       #{departmentintroduction,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.gm.hosptial.pojo.departmentinfo">
@@ -31,9 +31,6 @@
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="departmentid != null">
         DepartmentID,
-      </if>
-      <if test="tid != null">
-        tid,
       </if>
       <if test="departmentname != null">
         DepartmentName,
